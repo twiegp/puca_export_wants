@@ -34,7 +34,7 @@
 		//isFoil: "ph",
         language: $card.find('.language select option:selected').text(),
 		//language: "EN",
-        condition: conditionMap[$card.find('.condition select option:selected').text()]
+        condition: conditionMap[$card.find('.condition select option:selected').text()],
 		//condition: "NM",
 		//pucaID: $card.find('a[data-card_id]').attr("href")
 		pucaID: "ph"
