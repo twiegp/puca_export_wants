@@ -1,6 +1,6 @@
 (function ($) {
 
-  alert('v1: Ready to export.\n'
+  alert('v2: Ready to export.\n'
     + 'This includes loading all your haves which may take some time.\n'
     + 'A download button will appear in the top left corner of the screen when done.');
 
@@ -24,7 +24,7 @@
 
   var collectCards = function () {
     var $cards = $('.item.clear');
-
+	/*
     for (var i = 0; i < $cards.length; i++) {
       var $card = $($cards[i]);
 
@@ -42,7 +42,7 @@
       }
 
     }
-
+	*/
     $cards.remove();
   };
 
