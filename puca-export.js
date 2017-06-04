@@ -1,6 +1,6 @@
 (function ($) {
 
-  alert('v9: Ready to export.\n'
+  alert('v0: Ready to export.\n'
     + 'This includes loading all your haves which may take some time.\n'
     + 'A download button will appear in the top left corner of the screen when done.');
 
@@ -28,8 +28,8 @@
       var $card = $($cards[i]);
 
       var card = {
-        //cardName: $card.find('a[data-card_id]').text(),
-		cardName: "ph",
+        cardName: $card.find('a[data-card_id]').text(),
+		//cardName: "ph",
         //isFoil: $card.find('.foil select option:selected').val(),
 		isFoil: "ph",
         //language: $card.find('.language select option:selected').text(),
@@ -79,11 +79,11 @@
   };
 
   var loadOrExport = function () {
-    collectCards();
     
     var $more = $("a:contains('LOAD MORE')");
     if ($more.length == 1) {
       // no more load button
+	  collectCards();
       doExport();
       return;
     }
