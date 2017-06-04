@@ -1,6 +1,6 @@
 (function ($) {
 
-  alert('v7: Ready to export.\n'
+  alert('v8: Ready to export.\n'
     + 'This includes loading all your haves which may take some time.\n'
     + 'A download button will appear in the top left corner of the screen when done.');
 
@@ -28,7 +28,8 @@
       var $card = $($cards[i]);
 
       var card = {
-        cardName: $card.find('a[data-card_id]').text(),
+        //cardName: $card.find('a[data-card_id]').text(),
+		cardName: "ph",
         //setName: $card.find('.set select option:selected').text(),
 		setName: "ph",
         //isTradable: tradableMap[$card.find('.trade .btn-tab').hasClass('active-button-2')],
