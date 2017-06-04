@@ -1,6 +1,6 @@
 (function ($) {
 
-  alert('v3: Ready to export.\n'
+  alert('v4: Ready to export.\n'
     + 'This includes loading all your haves which may take some time.\n'
     + 'A download button will appear in the top left corner of the screen when done.');
 
@@ -32,9 +32,9 @@
 		//cardName: "ph",
         isFoil: $card.find('.foil').text(),
 		//isFoil: "ph",
-        language: "EN",
+        language: "English",
 		//language: "EN",
-        condition: "NM",
+        condition: "Near Mint",
 		//condition: "NM",
 		//pucaID: $card.find('a[data-card_id]').attr("href")
 		pucaID: $card.find('a[data-card_id]').attr("href")
@@ -53,13 +53,13 @@
 
     var groups = _.groupBy(cards, function (c) { return JSON.stringify(c); });
 
-    var csv = [['Count', 'Name', 'Condition', 'Language', 'Foil', 'PucaID', 'Status'].join(',') + '\n'];
+    var csv = [['Count', 'Name', 'Condition', 'Language', 'Foil', 'PucaID'].join(',') + '\n'];
     for (var key in groups) {
       var group = groups[key];
       var card = group[0];
       var quantity = group.length;
       group.length = 0; // a bit of cleanup
-      var row = [quantity, quote(card.cardName), quote(card.setName), card.condition, card.language, card.isFoil, card.pucaID, card.isTradable];
+      var row = [quantity, quote(card.cardName), card.condition, card.language, card.isFoil, card.pucaID];
       csv.push(row.join(',') + '\n');
     }
 
