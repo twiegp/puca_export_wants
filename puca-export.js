@@ -23,23 +23,21 @@
   var cards = [];
 
   var collectCards = function () {
-    var $cards = $('.item.clear');
+    var $cards = $('.item.clear.promoted');
     for (var i = 0; i < $cards.length; i++) {
       var $card = $($cards[i]);
 
       var card = {
         //cardName: $card.find('a[data-card_id]').text(),
 		cardName: "ph",
-        //setName: $card.find('.set select option:selected').text(),
-		setName: "ph",
-        //isTradable: tradableMap[$card.find('.trade .btn-tab').hasClass('active-button-2')],
-		isTradeable: "ph",
         //isFoil: $card.find('.foil select option:selected').val(),
 		isFoil: "ph",
         //language: $card.find('.language select option:selected').text(),
 		language: "EN",
         //condition: conditionMap[$card.find('.condition select option:selected').text()]
-		condition: "NM"
+		condition: "NM",
+		//pucaID: $card.find('a[data-card_id]').attr("href")
+		pucaID: "ph"
       };
 
       if (card.cardName && card.setName) {
@@ -55,13 +53,13 @@
 
     var groups = _.groupBy(cards, function (c) { return JSON.stringify(c); });
 
-    var csv = [['Count', 'Name', 'Expansion', 'Condition', 'Language', 'Foil', 'PucaID', 'Status'].join(',') + '\n'];
+    var csv = [['Count', 'Name', 'Condition', 'Language', 'Foil', 'PucaID', 'Status'].join(',') + '\n'];
     for (var key in groups) {
       var group = groups[key];
       var card = group[0];
       var quantity = group.length;
       group.length = 0; // a bit of cleanup
-      var row = [quantity, quote(card.cardName), quote(card.setName), card.condition, card.language, card.isFoil, '', card.isTradable];
+      var row = [quantity, quote(card.cardName), quote(card.setName), card.condition, card.language, card.isFoil, card.pucaID, card.isTradable];
       csv.push(row.join(',') + '\n');
     }
 
