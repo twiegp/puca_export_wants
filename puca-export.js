@@ -77,7 +77,7 @@
   };
 
   var loadOrExport = function () {
-    collectCards();
+    //collectCards();
     
     var $more = $("a:contains('LOAD MORE')");
     if ($more.length == 1) {
