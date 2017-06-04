@@ -1,6 +1,6 @@
 (function ($) {
 
-  alert('v4: Ready to export.\n'
+  alert('v5: Ready to export.\n'
     + 'This includes loading all your haves which may take some time.\n'
     + 'A download button will appear in the top left corner of the screen when done.');
 
@@ -41,7 +41,7 @@
       }
 
     }*/
-    //$cards.remove();
+    $cards.remove();
   };
 
   var doExport = function () {
