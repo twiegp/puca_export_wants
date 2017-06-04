@@ -1,6 +1,6 @@
 (function ($) {
 
-  alert('v2: Ready to export.\n'
+  alert('v3: Ready to export.\n'
     + 'This includes loading all your haves which may take some time.\n'
     + 'A download button will appear in the top left corner of the screen when done.');
 
@@ -24,13 +24,12 @@
 
   var collectCards = function () {
     var $cards = $('.item.clear');
-	/*
-    for (var i = 0; i < $cards.length; i++) {
+    /*for (var i = 0; i < $cards.length; i++) {
       var $card = $($cards[i]);
 
       var card = {
         cardName: $card.find('a[data-card_id]').text(),
-        //setName: $card.find('.set select option:selected').text(),
+        setName: $card.find('.set select option:selected').text(),
         //isTradable: tradableMap[$card.find('.trade .btn-tab').hasClass('active-button-2')],
         //isFoil: $card.find('.foil select option:selected').val(),
         //language: $card.find('.language select option:selected').text(),
@@ -41,8 +40,7 @@
         cards.push(card);
       }
 
-    }
-	*/
+    }*/
     $cards.remove();
   };
 
