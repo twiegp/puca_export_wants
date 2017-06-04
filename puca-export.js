@@ -1,6 +1,6 @@
 (function ($) {
 
-  alert('v2: Ready to export.\n'
+  alert('v3: Ready to export.\n'
     + 'This includes loading all your haves which may take some time.\n'
     + 'A download button will appear in the top left corner of the screen when done.');
 
@@ -30,14 +30,14 @@
       var card = {
         cardName: $card.find('a[data-card_id]').text(),
 		//cardName: "ph",
-        isFoil: $card.find('.foil select option:selected').val(),
+        isFoil: $card.find('.foil').text(),
 		//isFoil: "ph",
-        language: $card.find('.language select option:selected').text(),
+        language: "EN",
 		//language: "EN",
-        condition: conditionMap[$card.find('.condition select option:selected').text()],
+        condition: "NM",
 		//condition: "NM",
 		//pucaID: $card.find('a[data-card_id]').attr("href")
-		pucaID: "ph"
+		pucaID: $card.find('a[data-card_id]').attr("href")
       };
 
       if (card.cardName) {
