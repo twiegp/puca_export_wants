@@ -68,7 +68,7 @@
     $('<a/>', {
       href: URL.createObjectURL(blob),
       class: 'btn',
-      download: 'Pucatrade Haves ' + (new Date()) + '.csv'
+      download: 'Pucatrade Promos ' + (new Date()) + '.csv'
     }).css({
       position: 'fixed',
       left: '20px',
