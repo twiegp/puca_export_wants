@@ -1,5 +1,7 @@
 import pandas as pd
 
+saveFoil = True			# If true, don't remove foil promoted wants since they often don't have normal listings.
+
 # Read data
 df_wants = pd.read_csv("wants.csv", index_col = False)
 df_promos = pd.read_csv("promos.csv")
@@ -16,7 +18,7 @@ set_map = {"Masterpiece Series: Amonkhet Invocations": "Amonkhet Invocations",
 #df_wants['Foil'] = df_wants['Foil'].apply(lambda x: 1 if x['Expansion'] == "Masterpiece Series: Amonkhet Invocations" else x['Foil'], axis=1)
 df_wants['Expansion'] = df_wants['Expansion'].apply(lambda x: set_map[x] if x in set_map.keys() else x)
 
-# Remove promoted rows
+# Remove promoted rows *only for nonfoils*
 def promo_match(x):
 	if x['Count'] > 1:
 		return 0
@@ -34,6 +36,6 @@ def promo_match(x):
 
 df_wants['Promo'] = df_wants.apply(promo_match, axis=1)
 
-print(df_wants)
+#print(df_wants)
 
 df_wants[df_wants['Promo'] == 0].to_csv("wants_scrubbed.csv")

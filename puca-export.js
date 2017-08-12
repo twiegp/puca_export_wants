@@ -1,6 +1,6 @@
 (function ($) {
 
-  alert('v4: Ready to export.\n'
+  alert('v5: Ready to export.\n'
     + 'This includes loading all your haves which may take some time.\n'
     + 'A download button will appear in the top left corner of the screen when done.');
 
@@ -92,7 +92,7 @@
     var evt = new Event("click", { "bubbles": true, "cancelable": true });
     $more[1].dispatchEvent(evt);
 
-    setTimeout(loadOrExport, 2000);
+    setTimeout(loadOrExport, 5000);
   };
 
   loadOrExport();
