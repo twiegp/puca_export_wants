@@ -92,7 +92,7 @@
     var evt = new Event("click", { "bubbles": true, "cancelable": true });
     $more[1].dispatchEvent(evt);
 
-    setTimeout(loadOrExport, 5000);
+    setTimeout(loadOrExport, 10000);
   };
 
   loadOrExport();
