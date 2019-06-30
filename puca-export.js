@@ -1,6 +1,6 @@
 (function ($) {
 
-  alert('v5: Ready to export.\n'
+  alert('v6: Ready to export.\n'
     + 'This includes loading all your haves which may take some time.\n'
     + 'A download button will appear in the top left corner of the screen when done.');
 
@@ -23,7 +23,7 @@
   var cards = [];
 
   var collectCards = function () {
-    var $cards = $('.item.clear.promoted');
+    var $cards = $('.item.clear');
     for (var i = 0; i < $cards.length; i++) {
       var $card = $($cards[i]);
 
@@ -35,6 +35,7 @@
         language: "English",
 		//language: "EN",
         condition: "Near Mint",
+		limit: $card.find('
 		//condition: "NM",
 		//pucaID: $card.find('a[data-card_id]').attr("href")
 		pucaID: $card.find('a[data-card_id]').attr("href")
