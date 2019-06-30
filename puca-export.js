@@ -35,7 +35,6 @@
         language: "English",
 		//language: "EN",
         condition: "Near Mint",
-		limit: $card.find('
 		//condition: "NM",
 		//pucaID: $card.find('a[data-card_id]').attr("href")
 		pucaID: $card.find('a[data-card_id]').attr("href")
